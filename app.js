@@ -1,8 +1,25 @@
 //weather object
-const weather = new Weather(`Tallinn`)
+const weather = new Weather('Tallinn')
+
+
 
 const ui = new UI()
 console.log(ui)
+
+const form = document.querySelector('#change-city')
+console.log(form)
+form.addEventListener('sumbit', changeCityWeather)
+
+
+function changeCityWeather(e){
+	const cityName = document.querySelector('#city-name').value
+	weather.changeCity(cityName)
+	getCityWeather()
+	document.querySelector('#city-name').value = ''
+	console.log(weather)
+	e.preventDefault()
+}
+
 //get city weather and display it
 function getCityWeather(){
 	weather.getWeather()
@@ -10,9 +27,9 @@ function getCityWeather(){
 		console.log(data)
 		ui.drawWeather(data)
 	})
-	.cathc(error => console.log(error))
+	.catch(error => console.log(error))
 }
 
-getCityWeathe()
+getCityWeather()
 
 

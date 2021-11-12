@@ -1,6 +1,6 @@
 class UI {
 	constructor(){
-		this.description = document.querySelector('#deskription')
+		this.description = document.querySelector('#description')
 		this.temp = document.querySelector('#temp')
 		this.location = document.querySelector('#location')
 	}
@@ -10,7 +10,7 @@ class UI {
 		var description = data.weather[0].description;
 
 		this.description.innerHTML = description;
-		this.temp.innerHTML = celcius + &'deg;';
+		this.temp.innerHTML = celsius + '&deg;';
 		this.location.innerHTML = data.name;
 	}	
 }
