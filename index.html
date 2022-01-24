@@ -7,18 +7,24 @@
 </head>
 <body>
   <div class="box" id="weather">
-    <h2><div id="description"></div></h2>
-      <h1 id="temp"></h1>
     <h2><div id="location"></div></h2>
-  </div>
+      <ul class="list-group mt-3">
+        <li class="list-group-item" id="description"></li>
+        <li class="list-group-item" id="temp"></li>
+        <li class="list-group-item" id="uv_index"></li>
+        <li class="list-group-item" id="wind_speed"></li>
+        <li class="list-group-item" id="wind_direction"></li>
+        <li class="list-group-item" id="pressure"></li>
+        <li class="list-group-item" id="humidity"></li>
+      </ul>
+  </div>  
   <form id=change-city>
     <input type="text" id="city-name">
     <input type="submit" value="save">
   </form>
-  
+  <script src="LS.js"></script>
   <script src="weather.js"></script>
   <script src="UI.js"></script>
-
   <script src="app.js"></script>
 </body>
 </html> 

@@ -1,22 +1,24 @@
+//localstorage objekt
+const ls = new LS()
+const cityName = ls.getLocationData()
+
 //weather object
 const weather = new Weather('Tallinn')
 
 
 
 const ui = new UI()
-console.log(ui)
 
 const form = document.querySelector('#change-city')
-console.log(form)
 form.addEventListener('sumbit', changeCityWeather)
 
 
 function changeCityWeather(e){
 	const cityName = document.querySelector('#city-name').value
 	weather.changeCity(cityName)
+	ls.setLocationData(cityName)
 	getCityWeather()
 	document.querySelector('#city-name').value = ''
-	console.log(weather)
 	e.preventDefault()
 }
 
